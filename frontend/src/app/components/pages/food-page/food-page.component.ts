@@ -16,18 +16,20 @@ export class FoodPageComponent {
     foodService: FoodService,
     activatedRoute: ActivatedRoute,
     private cartService: CartService,
-    private router:Router
+    private router: Router
   ) {
     activatedRoute.params.subscribe((param) => {
       if (param.id) {
-        this.food = foodService.getAllFoodById(param.id);
+        foodService.getAllFoodById(param.id).subscribe(res=>
+         this.food=res 
+         
+          );
       }
     });
   }
 
-  addToCart(){
-    this.cartService.addToCart(this.food)
-    this.router.navigateByUrl("/cart-page")
+  addToCart() {
+    this.cartService.addToCart(this.food);
+    this.router.navigateByUrl('/cart-page');
   }
-
 }

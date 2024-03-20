@@ -12,6 +12,9 @@ import { FoodPageComponent } from './components/pages/food-page/food-page.compon
 import { CartPageComponent } from './components/pages/cart-page/cart-page.component';
 import { TitleComponent } from './components/partial/title/title.component';
 import { NotFoundComponent } from './components/partial/not-found/not-found.component';
+import { HttpClientModule } from '@angular/common/http';
+import { LoginPageComponent } from './components/pages/login-page/login-page.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,17 @@ import { NotFoundComponent } from './components/partial/not-found/not-found.comp
     FoodPageComponent,
     CartPageComponent,
     TitleComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LoginPageComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    ReactiveFormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
+  
 })
-export class AppModule { }
+export class AppModule {}
